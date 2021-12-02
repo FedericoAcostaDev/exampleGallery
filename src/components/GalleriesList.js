@@ -19,7 +19,7 @@ class GalleriesList extends Component {
       perPage: 40,
       userSelected: false,
       topSelected: false,
-      load: false
+      load: false,
     };
     this.infinityScroll = this.infinityScroll.bind(this);
   }
@@ -36,7 +36,7 @@ class GalleriesList extends Component {
   infinityScroll() {
     const { pageYOffset } = window;
     const {
-      documentElement: { clientHeight, scrollHeight }
+      documentElement: { clientHeight, scrollHeight },
     } = document;
     const { load, listEnd, page, currentPage, perPage } = this.state;
     const scrollTop = pageYOffset || document.documentElement.scrollTop;
@@ -46,7 +46,7 @@ class GalleriesList extends Component {
         page: ++this.state.page,
         load: true,
         listEnd: false,
-        currentPage: currentPage + perPage
+        currentPage: currentPage + perPage,
       });
     } else if (clientHeight + scrollTop >= scrollHeight && !load && !listEnd) {
       this.loadNextGalleries(this.props, true);
@@ -60,11 +60,11 @@ class GalleriesList extends Component {
       currentPage: 0,
       load: true,
       useFilter: true,
-      page: 0
+      page: 0,
     });
     this.props.changeFilter({
       [select.name]: option.value,
-      page: 0
+      page: 0,
     });
     if (select.name === "section") {
       option.value === "user"
@@ -92,21 +92,21 @@ class GalleriesList extends Component {
           ...props.list.slice(
             this.state.currentPage,
             this.state.currentPage + this.state.perPage
-          )
+          ),
         ],
         currentPage: currentNextPage,
-        useFilter: false
+        useFilter: false,
       });
     } else {
       this.setState({
         list: [
           ...this.state.list,
-          ...props.list.slice(
+          /* ...props.list.slice(
             this.state.currentPage,
             this.state.currentPage + this.state.perPage
-          )
+          ) */
         ],
-        currentPage: currentNextPage
+        currentPage: currentNextPage,
       });
     }
   }
@@ -132,7 +132,7 @@ class GalleriesList extends Component {
           topSelected={this.state.topSelected}
         />
         {this.props.list.length ? (
-          this.state.list.map(post => {
+          this.state.list.map((post) => {
             return <Post key={post.id} post={post} />;
           })
         ) : (
@@ -150,20 +150,21 @@ class GalleriesList extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   list: state.galleriesList,
-  filter: state.galleriesFilter
+  filter: state.galleriesFilter,
 });
 
-const mapDispatchToProps = dispatch => ({
-  getGalleries: params => {
+const mapDispatchToProps = (dispatch) => ({
+  getGalleries: (params) => {
     dispatch(asyncGetGalleries(params));
   },
   changeFilter: (name, newValue) => {
     dispatch(changeFilter(name, newValue));
-  }
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(GalleriesList)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(GalleriesList));
