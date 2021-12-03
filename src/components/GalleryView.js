@@ -6,8 +6,6 @@ import { asyncComments } from "../actions/comments";
 import { GalleryBody } from "./GalleryBody.js";
 import GalleryComments from "./Comments.js";
 
-import "../css/gallery.css";
-
 class GalleryView extends Component {
   componentDidMount() {
     this.props.getComments(this.props.gallery.id);
@@ -34,16 +32,17 @@ class GalleryView extends Component {
 }
 
 const mapStateToProps = (state, { match }) => ({
-  gallery: state.galleriesList.find(i => i.id === match.params.galleryId),
-  comments: state.comments
+  gallery: state.galleriesList.find((i) => i.id === match.params.galleryId),
+  comments: state.comments,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   getComments: (id, clear) => {
     dispatch(asyncComments(id, clear));
-  }
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(GalleryView)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(GalleryView));

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import "../css/galleriesList.css";
 import { asyncGetGalleries } from "../actions/galleries";
 import { changeFilter } from "../actions/filter";
 import { Navbar } from "./Navbar.js";

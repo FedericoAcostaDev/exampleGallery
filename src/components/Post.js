@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import "../css/post.css";
-
 const Post = ({ post }) => (
   <div className="col-md-3 col-xs-4 post">
     <Link className="post__link" to={`gallery/${post.id}`}>
