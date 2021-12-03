@@ -12,9 +12,10 @@ import reducers from "./reducers";
 
 import "./css/reset.css";
 import "./css/framework.css";
-import "./css/app.css";
-import "./App.css";
 
+/*
+import "./App.css";
+*/
 const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(thunk))

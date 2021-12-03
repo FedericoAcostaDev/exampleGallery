@@ -1,7 +1,6 @@
 import React from "react";
 
 import classes from "../css/navbar.module.scss";
-import "../css/filter.css";
 
 export const Navbar = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
