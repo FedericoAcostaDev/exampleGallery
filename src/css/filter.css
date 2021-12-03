@@ -1,8 +1,9 @@
 .filter__wrapper {
+  display: flex;
   position: fixed;
   top: 0;
-  left: 105px;
-  right: 104px;
+  left: 0px;
+  right: 0px;
   padding: 20px 0;
   z-index: 2;
   background: #34373c;
@@ -20,7 +21,7 @@
 .filter {
   display: flex;
   flex-flow: row nowrap;
-  color: #fff;
+  color: #fff; /*text color*/
   margin-left: 100px;
 }
 
