@@ -3,7 +3,7 @@ import React from "react";
 import classes from "../css/navbar.module.scss";
 import "../css/filter.css";
 
-export const GalleryFilter = (props) => {
+export const Navbar = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   return (
     <nav className={classes.nav}>

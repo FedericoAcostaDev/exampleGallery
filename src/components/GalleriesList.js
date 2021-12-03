@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import "../css/galleriesList.css";
 import { asyncGetGalleries } from "../actions/galleries";
 import { changeFilter } from "../actions/filter";
-import { GalleryFilter } from "./GalleryFilter.js";
+import { Navbar } from "./Navbar.js";
 import Post from "./Post.js";
 
 class GalleriesList extends Component {
@@ -125,7 +125,7 @@ class GalleriesList extends Component {
   render() {
     return (
       <div className="row gallery-list">
-        <GalleryFilter
+        <Navbar
           filterOptions={this.props.filter}
           onFilterChange={this.onFilterChange.bind(this)}
           userSelected={this.state.userSelected}
