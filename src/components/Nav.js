@@ -8,7 +8,7 @@ export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => setSidebar;
+  const showSidebar = () => setSidebar(!sidebar);
   return (
     <div className="filter__wrapper">
       <div className="logo" />
