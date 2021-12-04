@@ -86,7 +86,7 @@ export const Nav = (props) => {
           </FormLabel>
           <RadioGroup
             aria-label="section"
-            defaultValue="Hot"
+            defaultValue="hot"
             name="radio-buttons-group"
           >
             <FormControlLabel value="hot" control={<Radio />} label="Hot" />
@@ -94,64 +94,47 @@ export const Nav = (props) => {
             <FormControlLabel value="user" control={<Radio />} label="User" />
           </RadioGroup>
         </FormControl>
-
-        {["Section"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-            <select
-              id="section"
-              name="section"
-              onChange={(e) => onFilterChange(e)}
-              defaultValue={filterOptions.section}
-            >
-              <option value="hot">Hot</option>
-              <option value="top">Top</option>
-              <option value="user">User</option>
-            </select>
-          </ListItem>
-        ))}
-        {["Sort Parameters"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-            <select
-              id="sort"
-              name="sort"
-              onChange={(e) => onFilterChange(e)}
-              defaultValue={filterOptions.sort}
-            >
-              <option value="top">Top</option>
-              <option value="time">Time</option>
-              {userSelected && <option value="rising">Rising</option>}
-            </select>
-          </ListItem>
-        ))}
-        {["Date Window"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
-            </ListItemIcon>
-
-            <ListItemText primary={text} />
-            <select
-              id="window"
-              name="window"
-              onChange={(e) => onFilterChange(e)}
-              defaultValue={filterOptions.window}
-            >
-              <option value="day">Day</option>
-              <option value="week">Week</option>
-              <option value="month">Month</option>
-              <option value="year">Year</option>
-              <option value="all">All</option>
-            </select>
-          </ListItem>
-        ))}
+        <FormControl component="fieldset">
+          <FormLabel
+            component="legend"
+            id="section"
+            name="section"
+            onChange={(e) => onFilterChange(e)}
+            defaultValue={filterOptions.section}
+          >
+            Sort
+          </FormLabel>
+          <RadioGroup
+            aria-label="section"
+            defaultValue="top"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="top" control={<Radio />} label="Top" />
+            <FormControlLabel value="time" control={<Radio />} label="Time" />
+          </RadioGroup>
+        </FormControl>
+        <FormControl component="fieldset">
+          <FormLabel
+            component="legend"
+            id="window"
+            name="window"
+            onChange={(e) => onFilterChange(e)}
+            defaultValue={filterOptions.window}
+          >
+            Date Window
+          </FormLabel>
+          <RadioGroup
+            aria-label="section"
+            defaultValue="day"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="day" control={<Radio />} label="Day" />
+            <FormControlLabel value="week" control={<Radio />} label="Week" />
+            <FormControlLabel value="month" control={<Radio />} label="Month" />
+            <FormControlLabel value="year" control={<Radio />} label="Year" />
+            <FormControlLabel value="all" control={<Radio />} label="All" />
+          </RadioGroup>
+        </FormControl>
       </List>
     </Box>
   );
