@@ -11,6 +11,8 @@ import {
   FormGroup,
   Switch,
   withStyles,
+  RadioGroup,
+  Radio,
 } from "@material-ui/core";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -71,6 +73,26 @@ export const Nav = (props) => {
               label="Include Viral"
             />
           </FormGroup>
+        </FormControl>
+        <FormControl component="fieldset">
+          <FormLabel
+            component="legend"
+            id="section"
+            name="section"
+            onChange={(e) => onFilterChange(e)}
+            defaultValue={filterOptions.section}
+          >
+            Section
+          </FormLabel>
+          <RadioGroup
+            aria-label="section"
+            defaultValue="Hot"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel value="hot" control={<Radio />} label="Hot" />
+            <FormControlLabel value="top" control={<Radio />} label="Top" />
+            <FormControlLabel value="user" control={<Radio />} label="User" />
+          </RadioGroup>
         </FormControl>
 
         {["Section"].map((text, index) => (

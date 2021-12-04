@@ -9,8 +9,7 @@
   z-index: 2;
   background: #34373c;
 }
-.nav {
-}
+
 .navIcon {
   margin-left: 2rem;
   font-size: 2rem;
@@ -29,8 +28,6 @@
   background-size: contain;
 }
 
-.formLabel {
-}
 .filter {
   display: flex;
   flex-flow: row nowrap;
