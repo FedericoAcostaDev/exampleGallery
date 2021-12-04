@@ -101,10 +101,10 @@ class GalleriesList extends Component {
       this.setState({
         list: [
           ...this.state.list,
-          /* ...props.list.slice(
+          ...props.list.slice(
             this.state.currentPage,
             this.state.currentPage + this.state.perPage
-          ) */
+          ),
         ],
         currentPage: currentNextPage,
       });
