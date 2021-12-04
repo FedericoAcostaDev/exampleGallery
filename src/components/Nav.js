@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../css/filter.css";
+import "../css/nav.css";
 
 export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
@@ -9,7 +9,7 @@ export const Nav = (props) => {
       <div className="logo" />
       <div className="row">
         <div className="filter col-md-12">
-          <div>Sidebar</div>
+          <div className="sidebar">Sidebar</div>
           <div className="filter__section">
             <label htmlFor="section">Section</label>
             <select
