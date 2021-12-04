@@ -43,17 +43,6 @@ export const Nav = (props) => {
           </ListItem>
         ))}
       </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </Box>
   );
   return (
@@ -62,7 +51,7 @@ export const Nav = (props) => {
       <div className="row">
         <div className="filter col-md-12">
           <div>
-            {["left"].map((anchor) => (
+            {["right"].map((anchor) => (
               <React.Fragment key={anchor}>
                 <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
                 <Drawer
