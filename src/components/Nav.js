@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { FaBars } from "react-icons/fa";
 
 import "../css/nav.css";
 
 export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar;
   return (
     <div className="filter__wrapper">
       <div className="logo" />
       <div className="row">
         <div className="filter col-md-12">
-          <div className="sidebar">Sidebar</div>
+          <nav className="nav">
+            <navicon className="navIcon">
+              <FaBars />
+            </navicon>
+          </nav>
+          <sidebarnav className="sidebarNav">
+            <sidebarwrap className="sidebarWrap">
+              <navicon>
+                <FaBars />
+              </navicon>
+            </sidebarwrap>
+          </sidebarnav>
           <div className="filter__section">
             <label htmlFor="section">Section</label>
             <select

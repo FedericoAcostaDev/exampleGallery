@@ -9,6 +9,14 @@
   z-index: 2;
   background: #34373c;
 }
+.navIcon {
+  margin-left: 2rem;
+  font-size: 2rem;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .logo {
   float: left;
@@ -19,7 +27,7 @@
   background-size: contain;
 }
 
-.sidebar {
+.sidebarWrap {
 }
 .filter {
   display: flex;
