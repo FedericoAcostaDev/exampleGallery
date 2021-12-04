@@ -10,14 +10,29 @@ import {
   FormLabel,
   FormGroup,
   Switch,
+  withStyles,
 } from "@material-ui/core";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
 import "../css/nav.css";
+import { blue, green } from "@mui/material/colors";
 
 export const Nav = (props) => {
+  const CustomSwitch = withStyles({
+    switchBase: {
+      color: green[600],
+      "&checked": {
+        color: green[300],
+      },
+      "&checked + &track": {
+        backgroundColor: green[100],
+      },
+    },
+    checked: {},
+    track: {},
+  })(Switch);
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   const [checked, setChecked] = React.useState(false);
 
@@ -49,7 +64,10 @@ export const Nav = (props) => {
           <FormLabel className="formLabel"> Filters </FormLabel>
           <FormGroup>
             <FormControlLabel
-              control={<Switch checked={checked} onChange={switchHandler} />}
+              labelPlacement="start"
+              control={
+                <CustomSwitch checked={checked} onChange={switchHandler} />
+              }
               label="Include Viral"
             />
           </FormGroup>
