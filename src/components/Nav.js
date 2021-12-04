@@ -4,7 +4,13 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  FormGroup,
+  Switch,
+} from "@material-ui/core";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -13,6 +19,8 @@ import "../css/nav.css";
 
 export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
+  const [checked, setChecked] = React.useState(false);
+
   const [state, setState] = React.useState({
     right: false,
   });
@@ -26,6 +34,9 @@ export const Nav = (props) => {
 
     setState({ ...state, [anchor]: open });
   };
+  const switchHandler = (event) => {
+    setChecked(event.target.checked);
+  };
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -34,6 +45,16 @@ export const Nav = (props) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        <FormControl>
+          <FormLabel> Filters </FormLabel>
+          <FormGroup>
+            <FormControlLabel
+              control={<Switch checked={checked} onChange={switchHandler} />}
+              label="Viral"
+            />
+          </FormGroup>
+        </FormControl>
+        );
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
