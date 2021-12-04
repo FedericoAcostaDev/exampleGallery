@@ -2,19 +2,20 @@ import React from "react";
 
 import "../css/filter.css";
 
-export const GalleryFilter = props => {
+export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   return (
     <div className="filter__wrapper">
       <div className="logo" />
       <div className="row">
         <div className="filter col-md-12">
+          <div>Sidebar</div>
           <div className="filter__section">
             <label htmlFor="section">Section</label>
             <select
               id="section"
               name="section"
-              onChange={e => onFilterChange(e)}
+              onChange={(e) => onFilterChange(e)}
               defaultValue={filterOptions.section}
             >
               <option value="hot">Hot</option>
@@ -27,7 +28,7 @@ export const GalleryFilter = props => {
             <select
               id="sort"
               name="sort"
-              onChange={e => onFilterChange(e)}
+              onChange={(e) => onFilterChange(e)}
               defaultValue={filterOptions.sort}
             >
               <option value="viral">Viral</option>
@@ -41,7 +42,7 @@ export const GalleryFilter = props => {
             <select
               id="window"
               name="window"
-              onChange={e => onFilterChange(e)}
+              onChange={(e) => onFilterChange(e)}
               defaultValue={filterOptions.window}
             >
               <option value="day">Day</option>
