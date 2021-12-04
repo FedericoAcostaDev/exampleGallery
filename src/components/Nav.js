@@ -46,21 +46,70 @@ export const Nav = (props) => {
     >
       <List>
         <FormControl>
-          <FormLabel> Filters </FormLabel>
+          <FormLabel className="formLabel"> Filters </FormLabel>
           <FormGroup>
             <FormControlLabel
               control={<Switch checked={checked} onChange={switchHandler} />}
-              label="Viral"
+              label="Include Viral"
             />
           </FormGroup>
         </FormControl>
-        );
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+
+        {["Section"].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
             </ListItemIcon>
             <ListItemText primary={text} />
+            <select
+              id="section"
+              name="section"
+              onChange={(e) => onFilterChange(e)}
+              defaultValue={filterOptions.section}
+            >
+              <option value="hot">Hot</option>
+              <option value="top">Top</option>
+              <option value="user">User</option>
+            </select>
+          </ListItem>
+        ))}
+        {["Sort Parameters"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+            <select
+              id="sort"
+              name="sort"
+              onChange={(e) => onFilterChange(e)}
+              defaultValue={filterOptions.sort}
+            >
+              <option value="top">Top</option>
+              <option value="time">Time</option>
+              {userSelected && <option value="rising">Rising</option>}
+            </select>
+          </ListItem>
+        ))}
+        {["Date Window"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
+            </ListItemIcon>
+
+            <ListItemText primary={text} />
+            <select
+              id="window"
+              name="window"
+              onChange={(e) => onFilterChange(e)}
+              defaultValue={filterOptions.window}
+            >
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
+              <option value="year">Year</option>
+              <option value="all">All</option>
+            </select>
           </ListItem>
         ))}
       </List>
