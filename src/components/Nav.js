@@ -1,33 +1,25 @@
 import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 
-import Drawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 
-import List from "@mui/material/List";
 import {
+  Drawer,
   FormControl,
   FormControlLabel,
   FormLabel,
   FormGroup,
   Switch,
   withStyles,
-  RadioGroup,
-  Radio,
-  InputBase,
-  Select,
+  List,
 } from "@material-ui/core";
 
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import ListItem from "@mui/material/ListItem";
-import { MenuItem } from "@mui/material";
+
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
-import { blue, green } from "@mui/material/colors";
-
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import { green } from "@mui/material/colors";
 
 import "../css/nav.css";
 
