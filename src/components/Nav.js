@@ -5,11 +5,24 @@ import Drawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 
 import List from "@mui/material/List";
+import {
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  FormGroup,
+  Switch,
+  withStyles,
+  RadioGroup,
+  Radio,
+  InputBase,
+} from "@material-ui/core";
 
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
 import { FiFilter } from "react-icons/fi";
+import { AiOutlineRight } from "react-icons/ai";
+import { blue, green } from "@mui/material/colors";
 
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -17,24 +30,19 @@ import ListItemText from "@mui/material/ListItemText";
 import "../css/nav.css";
 const drawerWidth = 240;
 
-const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginRight: -drawerWidth,
-    ...(open && {
-      transition: theme.transitions.create("margin", {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginRight: 0,
-    }),
-  })
-);
+const CustomSwitch = withStyles({
+  switchBase: {
+    color: green[600],
+    "&checked": {
+      color: green[300],
+    },
+    "&checked + &track": {
+      backgroundColor: green[100],
+    },
+  },
+  checked: {},
+  track: {},
+})(Switch);
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
@@ -66,6 +74,7 @@ export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [checked, setChecked] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -73,6 +82,9 @@ export const Nav = (props) => {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+  const switchHandler = (event) => {
+    setChecked(event.target.checked);
   };
 
   return (
@@ -103,21 +115,128 @@ export const Nav = (props) => {
           >
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
-                {theme.direction === "rtl" ? <ListItem /> : <ListItem />}
+                {theme.direction === "rtl" ? (
+                  <AiOutlineRight />
+                ) : (
+                  <AiOutlineRight />
+                )}
               </IconButton>
             </DrawerHeader>
             <Divider />
             <List>
-              {["Inbox", "Starred", "Send email", "Drafts"].map(
-                (text, index) => (
-                  <ListItem button key={text}>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
+              <FormControl>
+                <FormLabel className="formLabel"> Filters </FormLabel>
+                <FormGroup>
+                  <FormControlLabel
+                    labelPlacement="start"
+                    control={
+                      <Switch checked={checked} onChange={switchHandler} />
+                    }
+                    label="Include Viral"
+                  />
+                </FormGroup>
+              </FormControl>
+              <FormControl component="fieldset">
+                <FormLabel
+                  component="legend"
+                  id="section"
+                  name="section"
+                  onChange={(e) => onFilterChange(e)}
+                  defaultValue={filterOptions.section}
+                >
+                  Section
+                </FormLabel>
+                <RadioGroup
+                  aria-label="section"
+                  defaultValue="hot"
+                  name="radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="hot"
+                    control={<Radio />}
+                    label="Hot"
+                  />
+                  <FormControlLabel
+                    value="top"
+                    control={<Radio />}
+                    label="Top"
+                  />
+                  <FormControlLabel
+                    value="user"
+                    control={<Radio />}
+                    label="User"
+                  />
+                </RadioGroup>
+              </FormControl>
+              <FormControl component="fieldset">
+                <FormLabel
+                  component="legend"
+                  id="section"
+                  name="section"
+                  onChange={(e) => onFilterChange(e)}
+                  defaultValue={filterOptions.section}
+                >
+                  Sort
+                </FormLabel>
+                <RadioGroup
+                  aria-label="section"
+                  defaultValue="top"
+                  name="radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="top"
+                    control={<Radio />}
+                    label="Top"
+                  />
+                  <FormControlLabel
+                    value="time"
+                    control={<Radio />}
+                    label="Time"
+                  />
+                </RadioGroup>
+              </FormControl>
+              <FormControl component="fieldset">
+                <FormLabel
+                  component="legend"
+                  id="window"
+                  name="window"
+                  onChange={(e) => onFilterChange(e)}
+                  defaultValue={filterOptions.window}
+                >
+                  Date Window
+                </FormLabel>
+                <RadioGroup
+                  aria-label="section"
+                  defaultValue="day"
+                  name="radio-buttons-group"
+                >
+                  <FormControlLabel
+                    value="day"
+                    control={<Radio />}
+                    label="Day"
+                  />
+                  <FormControlLabel
+                    value="week"
+                    control={<Radio />}
+                    label="Week"
+                  />
+                  <FormControlLabel
+                    value="month"
+                    control={<Radio />}
+                    label="Month"
+                  />
+                  <FormControlLabel
+                    value="year"
+                    control={<Radio />}
+                    label="Year"
+                  />
+                  <FormControlLabel
+                    value="all"
+                    control={<Radio />}
+                    label="All"
+                  />
+                </RadioGroup>
+              </FormControl>
             </List>
           </Drawer>
 
