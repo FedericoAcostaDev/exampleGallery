@@ -17,13 +17,13 @@ const Post = ({ post }) => (
                 : `http://i.imgur.com/${post.id}b.jpg`
             }
           />
-          <CardContent className="post__info">
-            <h4 className="post__title">{post.title}</h4>
-            <h5 className="post__title">{post.description}</h5>
-            <h6 className="post__title">{post.views} views</h6>
-            <h6 className="post__title">{post.points} points</h6>
-          </CardContent>
         </div>
+        <CardContent className="post__info">
+          <h4 className="post__title">{post.title}</h4>
+          <h5 className="post__title">{post.description}</h5>
+          <h6 className="post__title">{post.views} views</h6>
+          <h6 className="post__title">{post.points} points</h6>
+        </CardContent>
       </Card>
     </Link>
   </div>

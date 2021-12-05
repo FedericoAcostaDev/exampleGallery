@@ -23,8 +23,6 @@ import { green } from "@mui/material/colors";
 
 import "../css/nav.css";
 
-const drawerWidth = 250;
-
 const CustomSwitch = withStyles({
   switchBase: {
     color: green[600],
@@ -56,6 +54,8 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
+const drawerWidth = 400;
+
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
@@ -65,6 +65,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-start",
   "& .Muipaper-root": {
     width: drawerWidth,
+    opacity: 0.8,
   },
 }));
 
@@ -98,7 +99,7 @@ export const Nav = (props) => {
             onClick={handleDrawerOpen}
             sx={{ ...(open && { display: "none" }) }}
           >
-            <FiFilter />
+            <FiFilter className="fiFilter" />
           </IconButton>
           <Drawer
             sx={{

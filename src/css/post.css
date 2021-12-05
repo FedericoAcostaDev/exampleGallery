@@ -40,7 +40,8 @@
   display: flex;
   flex-direction: column;
   width: auto;
-  max-height: 110px;
+
+  height: 150px;
 
   background-color: darkgray;
 }
