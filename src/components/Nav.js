@@ -125,15 +125,6 @@ export const Nav = (props) => {
             <List>
               <FormControl>
                 <FormLabel className="formLabel"> Filters </FormLabel>
-                <FormGroup>
-                  <FormControlLabel
-                    labelPlacement="start"
-                    control={
-                      <Switch checked={checked} onChange={switchHandler} />
-                    }
-                    label="Include Viral"
-                  />
-                </FormGroup>
               </FormControl>
               <div className="item">
                 <label className="label" htmlFor="section">

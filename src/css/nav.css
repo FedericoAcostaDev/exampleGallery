@@ -15,7 +15,10 @@
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
-  background: #2e3035;
+  height: 30px;
+}
+.formLabel {
+  margin-left: 20px;
 }
 .label {
   margin-right: 15px;
