@@ -1,4 +1,175 @@
-import React, { useState } from "react";
+import React from "react";
+import { styled, useTheme } from "@mui/material/styles";
+
+import Drawer from "@mui/material/Drawer";
+import MuiAppBar from "@mui/material/AppBar";
+
+import List from "@mui/material/List";
+
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import ListItem from "@mui/material/ListItem";
+import { FiFilter } from "react-icons/fi";
+
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+
+import "../css/nav.css";
+const drawerWidth = 240;
+
+const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
+  ({ theme, open }) => ({
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginRight: -drawerWidth,
+    ...(open && {
+      transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginRight: 0,
+    }),
+  })
+);
+
+const AppBar = styled(MuiAppBar, {
+  shouldForwardProp: (prop) => prop !== "open",
+})(({ theme, open }) => ({
+  transition: theme.transitions.create(["margin", "width"], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginRight: drawerWidth,
+  }),
+}));
+
+const DrawerHeader = styled("div")(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: "flex-start",
+}));
+
+export const Nav = (props) => {
+  const { onFilterChange, userSelected, topSelected, filterOptions } = props;
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div className="filter__wrapper">
+      <div className="logo" />
+      <div className="row">
+        <div className="filter col-md-12">
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerOpen}
+            sx={{ ...(open && { display: "none" }) }}
+          >
+            <FiFilter />
+          </IconButton>
+          <Drawer
+            sx={{
+              width: drawerWidth,
+              flexShrink: 0,
+              "& .MuiDrawer-paper": {
+                width: drawerWidth,
+              },
+            }}
+            variant="persistent"
+            anchor="right"
+            open={open}
+          >
+            <DrawerHeader>
+              <IconButton onClick={handleDrawerClose}>
+                {theme.direction === "rtl" ? <ListItem /> : <ListItem />}
+              </IconButton>
+            </DrawerHeader>
+            <Divider />
+            <List>
+              {["Inbox", "Starred", "Send email", "Drafts"].map(
+                (text, index) => (
+                  <ListItem button key={text}>
+                    <ListItemIcon>
+                      {index % 2 === 0 ? <ListItemIcon /> : <ListItemIcon />}
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                )
+              )}
+            </List>
+          </Drawer>
+
+          <div className="filter__section">
+            <label htmlFor="section">Section</label>
+            <select
+              id="section"
+              name="section"
+              onChange={(e) => onFilterChange(e)}
+              defaultValue={filterOptions.section}
+            >
+              <option value="hot">Hot</option>
+              <option value="top">Top</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+          <div className="filter__section">
+            <label htmlFor="sort">Sort by</label>
+            <select
+              id="sort"
+              name="sort"
+              onChange={(e) => onFilterChange(e)}
+              defaultValue={filterOptions.sort}
+            >
+              <option value="viral">Viral</option>
+              <option value="top">Top</option>
+              <option value="time">Time</option>
+              {userSelected && <option value="rising">Rising</option>}
+            </select>
+          </div>
+          <div className="filter__section">
+            <label htmlFor="section">Time range</label>
+            <select
+              id="window"
+              name="window"
+              onChange={(e) => onFilterChange(e)}
+              defaultValue={filterOptions.window}
+            >
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
+              <option value="year">Year</option>
+              <option value="all">All</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/*import React, { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
