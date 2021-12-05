@@ -1,15 +1,13 @@
 import React from "react";
 
-export const GalleryInfo = props => {
+export const GalleryInfo = (props) => {
   const { gallery } = props;
   return (
     <div>
       <div className="gallery-info__count">
-        <span>{gallery.points}</span> Points |
-        <span> {gallery.views}</span> Views |
-        <span> {gallery.score}</span> Score |
-        <span> {gallery.ups}</span> Ups |
-        <span> {gallery.downs}</span> Downs
+        <span>{gallery.points}</span> Points |<span> {gallery.views}</span>{" "}
+        Views |<span> {gallery.score}</span> Score |<span> {gallery.ups}</span>{" "}
+        Ups |<span> {gallery.downs}</span> Downs
       </div>
       <div className="gallery-info__row">
         {gallery.tags.length ? (
