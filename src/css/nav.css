@@ -11,8 +11,16 @@
   justify-content: space-between;
 }
 
-.row {
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  background: #2e3035;
 }
+.label {
+  margin-right: 15px;
+}
+
 .navIcon {
   margin-left: 2rem;
   font-size: 2rem;

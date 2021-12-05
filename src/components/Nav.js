@@ -63,6 +63,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: "flex-start",
+  "& .Muipaper-root": {
+    width: drawerWidth,
+  },
 }));
 
 export const Nav = (props) => {
@@ -132,9 +135,12 @@ export const Nav = (props) => {
                   />
                 </FormGroup>
               </FormControl>
-              <div>
-                <label htmlFor="section">Section</label>
+              <div className="item">
+                <label className="label" htmlFor="section">
+                  Section
+                </label>
                 <select
+                  className="section"
                   id="section"
                   name="section"
                   onChange={(e) => onFilterChange(e)}
@@ -147,8 +153,10 @@ export const Nav = (props) => {
                   </option>
                 </select>
               </div>
-              <div className="filter__section">
-                <label htmlFor="sort">Sort by</label>
+              <div className="item">
+                <label className="label" htmlFor="sort">
+                  Sort by
+                </label>
                 <select
                   id="sort"
                   name="sort"
@@ -161,8 +169,10 @@ export const Nav = (props) => {
                   {userSelected && <option value="rising">Rising</option>}
                 </select>
               </div>
-              <div className="filter__section">
-                <label htmlFor="section">Time range</label>
+              <div className="item">
+                <label className="label" htmlFor="section">
+                  Time range
+                </label>
                 <select
                   id="window"
                   name="window"

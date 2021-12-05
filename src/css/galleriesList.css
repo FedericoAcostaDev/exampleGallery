@@ -1,6 +1,9 @@
 .gallery-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   padding-top: 20px;
-  background-color: #34373c;
+  background-color: #2e3035;
   margin-top: 95px;
 }
 
@@ -17,41 +20,41 @@
 }
 
 .preloader {
-  position:fixed;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  background:#141518;
-  z-index:2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #141518;
+  z-index: 2;
   transition: 1s all;
-  opacity:1;
-  visibility:visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .loading {
-  width:75px;
-  height:75px;
+  width: 75px;
+  height: 75px;
   border: 10px solid white;
   border-radius: 50%;
-  border-top-color:#34373c;
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
+  border-top-color: #34373c;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   animation: 1s spin infinite linear;
 }
 
 .done {
-  opacity:0;
-  visibility:hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 @keyframes spin {
-  from{
+  from {
     transform: translate(-50%, -50%) rotate(0deg);
   }
-  to{
-    transform:translate(-50%, -50%) rotate(360deg);
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

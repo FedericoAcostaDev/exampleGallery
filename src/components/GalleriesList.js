@@ -124,7 +124,7 @@ class GalleriesList extends Component {
 
   render() {
     return (
-      <div className="row gallery-list">
+      <div className="gallery-list">
         <Nav
           filterOptions={this.props.filter}
           onFilterChange={this.onFilterChange.bind(this)}
