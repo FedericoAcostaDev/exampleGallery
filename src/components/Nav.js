@@ -86,8 +86,9 @@ export const Nav = (props) => {
     <div className="filter__wrapper">
       <div className="logo" />
       <div className="row">
-        <div className="filter col-md-12">
+        <div className="filter ">
           <IconButton
+            className="iconnButton"
             color="inherit"
             aria-label="open drawer"
             edge="end"
