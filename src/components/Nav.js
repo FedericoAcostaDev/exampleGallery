@@ -15,11 +15,13 @@ import {
   RadioGroup,
   Radio,
   InputBase,
+  Select,
 } from "@material-ui/core";
 
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import ListItem from "@mui/material/ListItem";
+import { MenuItem } from "@mui/material";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
 import { blue, green } from "@mui/material/colors";
@@ -28,7 +30,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
 import "../css/nav.css";
-const drawerWidth = 240;
+
+const drawerWidth = 250;
 
 const CustomSwitch = withStyles({
   switchBase: {
@@ -136,152 +139,52 @@ export const Nav = (props) => {
                   />
                 </FormGroup>
               </FormControl>
-              <FormControl component="fieldset">
-                <FormLabel
-                  component="legend"
+              <div>
+                <label htmlFor="section">Section</label>
+                <select
                   id="section"
                   name="section"
                   onChange={(e) => onFilterChange(e)}
                   defaultValue={filterOptions.section}
                 >
-                  Section
-                </FormLabel>
-                <RadioGroup
-                  aria-label="section"
-                  defaultValue="hot"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="hot"
-                    control={<Radio />}
-                    label="Hot"
-                  />
-                  <FormControlLabel
-                    value="top"
-                    control={<Radio />}
-                    label="Top"
-                  />
-                  <FormControlLabel
-                    value="user"
-                    control={<Radio />}
-                    label="User"
-                  />
-                </RadioGroup>
-              </FormControl>
-              <FormControl component="fieldset">
-                <FormLabel
-                  component="legend"
-                  id="section"
-                  name="section"
+                  <option value="hot">Hot</option>
+                  <option value="top">Top</option>
+                  <option id="option" value="user">
+                    User
+                  </option>
+                </select>
+              </div>
+              <div className="filter__section">
+                <label htmlFor="sort">Sort by</label>
+                <select
+                  id="sort"
+                  name="sort"
                   onChange={(e) => onFilterChange(e)}
-                  defaultValue={filterOptions.section}
+                  defaultValue={filterOptions.sort}
                 >
-                  Sort
-                </FormLabel>
-                <RadioGroup
-                  aria-label="section"
-                  defaultValue="top"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="top"
-                    control={<Radio />}
-                    label="Top"
-                  />
-                  <FormControlLabel
-                    value="time"
-                    control={<Radio />}
-                    label="Time"
-                  />
-                </RadioGroup>
-              </FormControl>
-              <FormControl component="fieldset">
-                <FormLabel
-                  component="legend"
+                  <option value="viral">Viral</option>
+                  <option value="top">Top</option>
+                  <option value="time">Time</option>
+                  {userSelected && <option value="rising">Rising</option>}
+                </select>
+              </div>
+              <div className="filter__section">
+                <label htmlFor="section">Time range</label>
+                <select
                   id="window"
                   name="window"
                   onChange={(e) => onFilterChange(e)}
                   defaultValue={filterOptions.window}
                 >
-                  Date Window
-                </FormLabel>
-                <RadioGroup
-                  aria-label="section"
-                  defaultValue="day"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel
-                    value="day"
-                    control={<Radio />}
-                    label="Day"
-                  />
-                  <FormControlLabel
-                    value="week"
-                    control={<Radio />}
-                    label="Week"
-                  />
-                  <FormControlLabel
-                    value="month"
-                    control={<Radio />}
-                    label="Month"
-                  />
-                  <FormControlLabel
-                    value="year"
-                    control={<Radio />}
-                    label="Year"
-                  />
-                  <FormControlLabel
-                    value="all"
-                    control={<Radio />}
-                    label="All"
-                  />
-                </RadioGroup>
-              </FormControl>
+                  <option value="day">Day</option>
+                  <option value="week">Week</option>
+                  <option value="month">Month</option>
+                  <option value="year">Year</option>
+                  <option value="all">All</option>
+                </select>
+              </div>
             </List>
           </Drawer>
-
-          <div className="filter__section">
-            <label htmlFor="section">Section</label>
-            <select
-              id="section"
-              name="section"
-              onChange={(e) => onFilterChange(e)}
-              defaultValue={filterOptions.section}
-            >
-              <option value="hot">Hot</option>
-              <option value="top">Top</option>
-              <option value="user">User</option>
-            </select>
-          </div>
-          <div className="filter__section">
-            <label htmlFor="sort">Sort by</label>
-            <select
-              id="sort"
-              name="sort"
-              onChange={(e) => onFilterChange(e)}
-              defaultValue={filterOptions.sort}
-            >
-              <option value="viral">Viral</option>
-              <option value="top">Top</option>
-              <option value="time">Time</option>
-              {userSelected && <option value="rising">Rising</option>}
-            </select>
-          </div>
-          <div className="filter__section">
-            <label htmlFor="section">Time range</label>
-            <select
-              id="window"
-              name="window"
-              onChange={(e) => onFilterChange(e)}
-              defaultValue={filterOptions.window}
-            >
-              <option value="day">Day</option>
-              <option value="week">Week</option>
-              <option value="month">Month</option>
-              <option value="year">Year</option>
-              <option value="all">All</option>
-            </select>
-          </div>
         </div>
       </div>
     </div>
