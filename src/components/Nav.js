@@ -1,15 +1,10 @@
 import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 
-import MuiAppBar from "@mui/material/AppBar";
-import Logo from "../logo/Logo.png";
-
 import {
   Drawer,
   FormControl,
-  FormControlLabel,
   FormLabel,
-  FormGroup,
   Switch,
   withStyles,
   List,
@@ -20,40 +15,8 @@ import IconButton from "@mui/material/IconButton";
 
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
-import { green } from "@mui/material/colors";
 
 import "../css/nav.css";
-
-const CustomSwitch = withStyles({
-  switchBase: {
-    color: green[600],
-    "&checked": {
-      color: green[300],
-    },
-    "&checked + &track": {
-      backgroundColor: green[100],
-    },
-  },
-  checked: {},
-  track: {},
-})(Switch);
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  transition: theme.transitions.create(["margin", "width"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginRight: drawerWidth,
-  }),
-}));
 
 const drawerWidth = 400;
 
@@ -61,20 +24,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: "flex-start",
-  "& .Muipaper-root": {
-    width: drawerWidth,
-    opacity: 0.8,
-  },
 }));
 
 export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [checked, setChecked] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -82,9 +37,6 @@ export const Nav = (props) => {
 
   const handleDrawerClose = () => {
     setOpen(false);
-  };
-  const switchHandler = (event) => {
-    setChecked(event.target.checked);
   };
 
   return (
