@@ -20,7 +20,7 @@
     "style-loader": "^0.19.0"
   },
   "scripts": {
-    "start": "npm run build",
+    "start": "react-scripts start --host 0.0.0.0",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
