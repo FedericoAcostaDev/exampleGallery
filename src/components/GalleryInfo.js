@@ -19,7 +19,7 @@ export const GalleryInfo = (props) => {
             );
           })
         ) : (
-          <div className="col">There are no tags :(</div>
+          <div className="col">No tags founded</div>
         )}
       </div>
     </div>

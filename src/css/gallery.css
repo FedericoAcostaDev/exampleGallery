@@ -1,13 +1,18 @@
 .gallery__home-link {
-  display: block;
-  padding: 25px;
-  margin-bottom: 20px;
-  text-decoration: none;
-  background-color: #34373c;
-  color: white;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  padding: 20px 0;
+  height: 80px;
+  z-index: 2;
+  background: #e0e0e0;
+  justify-content: space-between;
 }
 
 .gallery-body {
+  margin-top: 100px;
   display: flex;
   flex-flow: column nowrap;
   padding: 20px;
@@ -64,7 +69,7 @@
   margin-bottom: 20px;
 }
 
-.gallery-body__image-description{
+.gallery-body__image-description {
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(160, 160, 160, 0.2);
 }
