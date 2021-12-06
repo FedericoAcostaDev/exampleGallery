@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "../css/post.css";
 
 const Post = ({ post }) => (
-  <div className="col-md-3 col-xs-4 post">
+  <div className="col-12 col-md-3 col-xs-4 post">
     <Link className="post__link" to={`gallery/${post.id}`}>
       <Card className="post__container">
         <div className="post__image-container">
