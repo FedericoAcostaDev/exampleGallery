@@ -10,6 +10,7 @@ import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
 
 import "../css/nav.css";
+import { green } from "@mui/material/colors";
 
 const drawerWidth = 400;
 
@@ -72,11 +73,7 @@ export const Nav = (props) => {
           >
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
-                {theme.direction === "rtl" ? (
-                  <AiOutlineRight className="rightArrowIcon" />
-                ) : (
-                  <AiOutlineRight className="rightArrowIcon" />
-                )}
+                <AiOutlineRight className="rightArrowIcon" />
               </IconButton>
             </DrawerHeader>
             <Divider />
@@ -86,7 +83,7 @@ export const Nav = (props) => {
               </FormControl>
               <div className="item">
                 <label className="label" htmlFor="sort">
-                  Viral
+                  Show Viral
                 </label>
                 <select
                   id="sort"
