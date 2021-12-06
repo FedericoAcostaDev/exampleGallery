@@ -1,14 +1,7 @@
 import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 
-import {
-  Drawer,
-  FormControl,
-  FormLabel,
-  Switch,
-  withStyles,
-  List,
-} from "@material-ui/core";
+import { Drawer, FormControl, FormLabel, List } from "@material-ui/core";
 
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
