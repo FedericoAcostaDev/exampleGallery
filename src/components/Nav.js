@@ -85,6 +85,20 @@ export const Nav = (props) => {
                 <FormLabel className="formLabel"> Filters </FormLabel>
               </FormControl>
               <div className="item">
+                <label className="label" htmlFor="sort">
+                  Viral
+                </label>
+                <select
+                  id="sort"
+                  name="sort"
+                  onChange={(e) => onFilterChange(e)}
+                  defaultValue={filterOptions.showViral}
+                >
+                  <option value="true">On</option>
+                  <option value="false">Of</option>
+                </select>
+              </div>
+              <div className="item">
                 <label className="label" htmlFor="section">
                   Section
                 </label>
@@ -120,7 +134,7 @@ export const Nav = (props) => {
               </div>
               <div className="item">
                 <label className="label" htmlFor="section">
-                  Time range
+                  Window
                 </label>
                 <select
                   id="window"
