@@ -79,7 +79,9 @@ export const Nav = (props) => {
             <Divider />
             <List>
               <FormControl>
-                <FormLabel className="formLabel"> Filters </FormLabel>
+                <FormLabel className="formLabel">
+                  <h4>Filters</h4>
+                </FormLabel>
               </FormControl>
               <div className="item">
                 <label className="label" htmlFor="sort">

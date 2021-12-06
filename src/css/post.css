@@ -36,6 +36,11 @@
   transition: transform 0.5s;
 }
 
+.votes {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
 .post__info {
   display: flex;
   flex-direction: column;
