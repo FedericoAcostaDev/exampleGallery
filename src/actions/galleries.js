@@ -9,8 +9,7 @@ export const asyncGetGalleries =
       crossDomain: true,
       method: "GET",
       headers: {
-        authorization: "Client-ID" + process.env.REACT_APP_ID,
-        Authorization: "Bearer ed6b6da9b2ff1b42449e05602514364e0e0ae013",
+        authorization: process.env.REACT_APP_NOT_SECRET_CODE,
       },
     })
       .then((response) => {
