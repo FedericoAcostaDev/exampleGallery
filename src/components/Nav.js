@@ -95,7 +95,7 @@ export const Nav = (props) => {
                   defaultValue={filterOptions.showViral}
                 >
                   <option value="true">On</option>
-                  <option value="false">Of</option>
+                  <option value="false">Off</option>
                 </select>
               </div>
               <div className="item">
