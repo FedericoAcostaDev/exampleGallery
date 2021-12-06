@@ -75,14 +75,10 @@ export const Nav = (props) => {
               <IconButton onClick={handleDrawerClose}>
                 <AiOutlineRight className="rightArrowIcon" />
               </IconButton>
+              <h4 className="filters">Filter by</h4>
             </DrawerHeader>
             <Divider />
             <List>
-              <FormControl>
-                <FormLabel className="formLabel">
-                  <h4>Filters</h4>
-                </FormLabel>
-              </FormControl>
               <div className="item">
                 <label className="label" htmlFor="sort">
                   Show Viral
@@ -96,6 +92,7 @@ export const Nav = (props) => {
                   <option value="true">On</option>
                   <option value="false">Off</option>
                 </select>
+                <span className="arrow"></span>
               </div>
               <div className="item">
                 <label className="label" htmlFor="section">
