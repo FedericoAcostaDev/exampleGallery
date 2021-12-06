@@ -2,6 +2,7 @@ import React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 
 import MuiAppBar from "@mui/material/AppBar";
+import Logo from "../logo/Logo.png";
 
 import {
   Drawer,
@@ -90,7 +91,7 @@ export const Nav = (props) => {
     <div className="filter__wrapper">
       <div className="logo" />
       <div className="row">
-        <div className="filter ">
+        <div className="filter">
           <IconButton
             className="iconnButton"
             color="inherit"
@@ -102,6 +103,7 @@ export const Nav = (props) => {
             <FiFilter className="fiFilter" />
           </IconButton>
           <Drawer
+            className="drawer"
             sx={{
               width: drawerWidth,
               flexShrink: 0,
@@ -116,9 +118,9 @@ export const Nav = (props) => {
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
                 {theme.direction === "rtl" ? (
-                  <AiOutlineRight />
+                  <AiOutlineRight className="rightArrowIcon" />
                 ) : (
-                  <AiOutlineRight />
+                  <AiOutlineRight className="rightArrowIcon" />
                 )}
               </IconButton>
             </DrawerHeader>

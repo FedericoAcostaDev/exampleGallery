@@ -7,11 +7,14 @@
   padding: 20px 0;
   height: 80px;
   z-index: 2;
-  background: #eeeeee;
+  background: #e0e0e0;
   justify-content: space-between;
 }
 
 .fiFilter {
+  color: black;
+}
+.rightArrowIcon {
   color: black;
 }
 .item {
@@ -36,11 +39,15 @@
   align-items: center;
 }
 
+.drawer {
+  opacity: 0.9;
+}
+
 .logo {
   float: left;
-  background: url(../img/ImgurLogo.svg) center center no-repeat;
-  width: 87px;
-  height: 34px;
+  background: url(../logo/Logo.png) center center no-repeat;
+  width: 150px;
+  height: auto;
   margin-left: 50px;
   background-size: contain;
 }
