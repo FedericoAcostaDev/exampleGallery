@@ -7,7 +7,6 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 
 import { FiFilter } from "react-icons/fi";
-import { BiArrowFromBottom } from "react-icons/bi";
 import { AiOutlineRight } from "react-icons/ai";
 
 import "../css/nav.css";
@@ -24,7 +23,6 @@ export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const [isVisible, setIsVisible] = React.useState(false);
 
   //to top button
 
