@@ -21,6 +21,7 @@
 }
 
 .post__title {
+  color: white;
   margin-bottom: 3px;
 }
 
@@ -43,7 +44,7 @@
 
   height: 150px;
 
-  background-color: darkgray;
+  background-color: #34373c;
 }
 
 .post__container:hover {
