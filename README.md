@@ -23,7 +23,7 @@ https://www.color-hex.com/color/4d5061
 
 ## npm run start
 
-create a .env file with the token
+## create a .env file with the token
 
-instead of using localhost:3000 use {YOUR_IP}:3000
+### instead of using localhost:3000 use {YOUR_IP}:3000
 example: 124.169.2.137:3000
