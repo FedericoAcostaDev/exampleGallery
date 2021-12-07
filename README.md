@@ -1,7 +1,7 @@
 # I-MAGE
 
-Created using React.js/Redux
-styled with SASS.
+Created using React.js/Redux/Redux-Thunk
+styled with bootstrap css.
 
 # start app locally
 
@@ -15,5 +15,5 @@ npm install
 
 npm run start
 
-run localhost in {YOUR_IP}:3000
+npm start in direction: {YOUR_IP}:3000
 example: 124.169.2.137:3000
