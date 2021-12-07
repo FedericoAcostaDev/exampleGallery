@@ -133,7 +133,11 @@ class GalleriesList extends Component {
         />
         {this.props.list.length ? (
           this.state.list.map((post) => {
-            return <Post key={post.id} post={post} />;
+            return (
+              <div classname="row galery-row">
+                <Post key={post.id} post={post} />
+              </div>
+            );
           })
         ) : (
           <div id="page-preloader" className="preloader">
