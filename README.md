@@ -1,12 +1,14 @@
 # I-MAGE
 
-Created using React.js/Redux/Redux-Thunk
-styled with bootstrap CSS.
+Created using React.js/Redux/Redux-Thunk -
+Styled with bootstrap CSS.
 
 Approach:
 I started positioning the main elements and fetching the data from the main page, using mostly React components.
-then, I continued by Posts.js. Implementing detailed info about the posts, as well as comments and replies.
+I continued by Posts.js. Implementing detailed info about the posts, as well as comments and replies.
 Finishing, the stylization of all elements. 
+
+API token Encrypted.
 
 There's no Unit Implementation.
  
@@ -17,9 +19,9 @@ https://www.color-hex.com/color/4d5061
 
 # start app locally
 
-##npm install
+## npm install
 
-##npm run start
+## npm run start
 
 create a .env file with the token
 
