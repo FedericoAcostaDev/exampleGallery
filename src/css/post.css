@@ -2,6 +2,7 @@
   padding: 0;
   margin-bottom: 30px;
   min-width: 250px;
+  max-width: 100%;
 }
 
 .post__container {
@@ -34,6 +35,7 @@
   border-radius: 5px;
   display: block;
   width: 100%;
+
   transition: transform 0.5s;
 }
 
