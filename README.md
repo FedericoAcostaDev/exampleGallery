@@ -13,17 +13,17 @@ API token Encrypted.
 There's no Unit Implementation.
  
 
-color palette:
+Color palette:
 Tints & shadows of #4d5061
 https://www.color-hex.com/color/4d5061
 
-# start app locally
+# Start app locally
 
 ## npm install
 
 ## npm run start
 
-## create a .env file with the token
+## Create a .env file with the token
 
-### instead of using localhost:3000 use {YOUR_IP}:3000
+### Instead of using localhost:3000 use {YOUR_IP}:3000
 example: 124.169.2.137:3000
