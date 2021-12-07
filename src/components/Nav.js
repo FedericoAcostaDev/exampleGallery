@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { styled, useTheme } from "@mui/material/styles";
+import React from "react";
+import { styled } from "@mui/material/styles";
 
-import { Drawer, FormControl, FormLabel, List } from "@material-ui/core";
+import { Drawer, List } from "@material-ui/core";
 
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
@@ -10,7 +10,6 @@ import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
 
 import "../css/nav.css";
-import { green } from "@mui/material/colors";
 
 const drawerWidth = 400;
 
