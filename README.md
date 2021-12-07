@@ -7,6 +7,8 @@ Approach:
 I started positioning the main elements and fetching the data from the main page, using mostly React components.
 then, I continued by Posts.js. Implementing detailed info about the posts, as well as comments and replies.
 Finishing, the stylization of all elements. 
+
+There's no Unit Implementation.
  
 
 color palette:
