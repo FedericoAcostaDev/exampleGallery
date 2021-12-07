@@ -1,11 +1,30 @@
 .gallery-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  margin-top: 150px;
   padding-top: 20px;
+  display: column;
+  columns: 3;
   background-color: #e0e0e0;
   border-radius: 5px;
-  margin-top: 95px;
+}
+@media screen and (max-width: 768px) {
+  .gallery-list {
+    columns: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery-list {
+    columns: 2;
+  }
+}
+@media screen and (min-width: 990px) {
+  .gallery-list {
+    columns: 3;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gallery-list {
+    columns: 4;
+  }
 }
 
 .loader {
