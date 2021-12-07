@@ -68,12 +68,6 @@ select {
   width: 90px;
 }
 
-.custom-arrow {
-  background: white;
-  height: 1rem;
-  width: 1rem;
-}
-
 .filter {
   display: flex;
   flex-grow: 1;
@@ -81,12 +75,4 @@ select {
   color: #fff; /*text color*/
   margin-left: 100px;
   margin-right: 100px;
-}
-
-.filter__section:not(:last-child) {
-  margin-right: 50px;
-}
-
-.filter__section label {
-  margin-right: 10px;
 }
