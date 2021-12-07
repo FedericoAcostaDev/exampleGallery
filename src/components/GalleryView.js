@@ -23,7 +23,7 @@ class GalleryView extends Component {
       <div className="row">
         <div className="col-md-12">
           <Link className="gallery__home-link" to="/">
-            <div className="logo" />.
+            <div className="logo" />
           </Link>
           <GalleryBody gallery={gallery} />
           <GalleryComments comments={comments} />
@@ -34,16 +34,17 @@ class GalleryView extends Component {
 }
 
 const mapStateToProps = (state, { match }) => ({
-  gallery: state.galleriesList.find(i => i.id === match.params.galleryId),
-  comments: state.comments
+  gallery: state.galleriesList.find((i) => i.id === match.params.galleryId),
+  comments: state.comments,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   getComments: (id, clear) => {
     dispatch(asyncComments(id, clear));
-  }
+  },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  withRouter(GalleryView)
-);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(GalleryView));

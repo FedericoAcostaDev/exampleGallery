@@ -25,6 +25,11 @@
   font-size: 14px;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+  transition: 150ms;
+}
+
 .gallery-info__tag {
   margin-right: 10px;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 
 import { Drawer, FormControl, FormLabel, List } from "@material-ui/core";
@@ -22,10 +22,8 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export const Nav = (props) => {
   const { onFilterChange, userSelected, topSelected, filterOptions } = props;
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
-  //to top button
+  const [open, setOpen] = React.useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
