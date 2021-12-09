@@ -12,7 +12,7 @@ import reducers from "./reducers";
 
 import "./css/framework.css";
 import "./css/app.css";
-import "./App.css";
+import classes from "./App.scss";
 
 const store = createStore(
   reducers,
