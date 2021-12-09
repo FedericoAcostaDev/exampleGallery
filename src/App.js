@@ -11,7 +11,6 @@ import GalleryView from "./components/GalleryView.js";
 import reducers from "./reducers";
 
 import "./css/framework.css";
-import "./css/app.css";
 import classes from "./App.scss";
 
 const store = createStore(
