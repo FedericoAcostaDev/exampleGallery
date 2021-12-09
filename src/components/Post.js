@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BiUpvote } from "react-icons/bi";
 import { BiDownvote } from "react-icons/bi";
 
-import classes from "../css/post.scss";
+import classes from "../scss/post.scss";
 
 const Post = ({ post }) => (
   <div className={classes.post}>

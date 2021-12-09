@@ -1,7 +1,7 @@
 import React from "react";
 import { GalleryInfo } from "./GalleryInfo.js";
 
-import classes from "../css/gallery.scss";
+import classes from "../scss/gallery.scss";
 export const GalleryBody = (props) => {
   const { gallery } = props;
 

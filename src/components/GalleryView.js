@@ -6,7 +6,7 @@ import { asyncComments } from "../actions/comments";
 import { GalleryBody } from "./GalleryBody.js";
 import GalleryComments from "./Comments.js";
 
-import classes from "../css/gallery.scss";
+import classes from "../scss/gallery.scss";
 
 class GalleryView extends Component {
   componentDidMount() {

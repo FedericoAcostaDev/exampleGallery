@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
 
-import classes from "../css/nav.scss";
+import classes from "../scss/nav.scss";
 
 const drawerWidth = 400;
 
