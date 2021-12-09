@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import "../css/galleriesList.css";
+import classes from "../css/galleriesList.scss";
 import { asyncGetGalleries } from "../actions/galleries";
 import { changeFilter } from "../actions/filter";
 import { Nav } from "./Nav.js";
@@ -124,7 +124,7 @@ class GalleriesList extends Component {
 
   render() {
     return (
-      <div className="gallery-list">
+      <div className={classes.gallery__list}>
         <Nav
           filterOptions={this.props.filter}
           onFilterChange={this.onFilterChange.bind(this)}
@@ -136,13 +136,13 @@ class GalleriesList extends Component {
             return <Post key={post.id} post={post} />;
           })
         ) : (
-          <div id="page-preloader" className="preloader">
-            <div className="loading" />
+          <div id="page-preloader" className={classes.preloader}>
+            <div className={classes.loading} />
           </div>
         )}
         {this.state.load && (
-          <div className="loader">
-            <h3 className="loader__title">Loading...</h3>
+          <div className={classes.loader}>
+            <h3 className={classes.loader__title}>Loading...</h3>
           </div>
         )}
       </div>

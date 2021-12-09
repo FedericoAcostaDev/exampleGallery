@@ -1,4 +1,6 @@
-.gallery-list {
+@import "../styles/variables.scss";
+
+.gallery__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -12,12 +14,11 @@
   position: fixed;
   left: 30px;
   bottom: 30px;
-}
-
-.loader__title {
-  text-align: center;
-  margin-bottom: 0;
-  color: #fff;
+  &__title {
+    text-align: center;
+    margin-bottom: 0;
+    color: #fff;
+  }
 }
 
 .preloader {

@@ -10,7 +10,6 @@ import GalleriesList from "./components/GalleriesList";
 import GalleryView from "./components/GalleryView.js";
 import reducers from "./reducers";
 
-import "./css/reset.css";
 import "./css/framework.css";
 import "./css/app.css";
 import "./App.css";
