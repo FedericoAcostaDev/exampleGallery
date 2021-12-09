@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { BiUpvote } from "react-icons/bi";
 import { BiDownvote } from "react-icons/bi";
 
-import "../css/post.css";
+import classes from "../css/post.scss";
 
 const Post = ({ post }) => (
-  <div className="col-12 col-md-3 col-xs-4 post">
-    <Link className="post__link" to={`gallery/${post.id}`}>
-      <div className="post__container">
-        <div className="post__image-container">
+  <div className={classes.post}>
+    <Link className={classes.post__link} to={`gallery/${post.id}`}>
+      <div className={classes.__container}>
+        <div className={classes.image__container}>
           <img
-            className="post__image"
+            className={classes.image}
             src={
               post.cover
                 ? `http://i.imgur.com/${post.cover}b.jpg`
@@ -19,14 +19,14 @@ const Post = ({ post }) => (
             }
           />
         </div>
-        <div className="post__info">
-          <h6 className="post__title">{post.title}</h6>
-          <h6 className="post__title">{post.description}</h6>
+        <div className={classes.post__info}>
+          <h6 className={classes.post__title}>{post.title}</h6>
+          <h6 className={classes.post__title}>{post.description}</h6>
           <div className="votes">
-            <h6 className="post__title">
+            <h6 className={classes.post__title}>
               {post.ups} <BiUpvote />
             </h6>
-            <h6 className="post__title">
+            <h6 className={classes.post__title}>
               {post.downs} <BiDownvote />{" "}
             </h6>
           </div>
