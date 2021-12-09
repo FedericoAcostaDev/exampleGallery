@@ -10,7 +10,7 @@ import GalleriesList from "./components/GalleriesList";
 import GalleryView from "./components/GalleryView.js";
 import reducers from "./reducers";
 
-import "./css/framework.css";
+import "./css/framework.scss";
 import classes from "./App.scss";
 
 const store = createStore(

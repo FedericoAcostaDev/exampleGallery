@@ -6,7 +6,7 @@ import { asyncComments } from "../actions/comments";
 import { GalleryBody } from "./GalleryBody.js";
 import GalleryComments from "./Comments.js";
 
-import "../css/gallery.css";
+import classes from "../css/gallery.scss";
 
 class GalleryView extends Component {
   componentDidMount() {
@@ -20,10 +20,10 @@ class GalleryView extends Component {
   render() {
     const { gallery, comments } = this.props;
     return (
-      <div className="row">
-        <div className="col-md-12">
-          <Link className="gallery__home-link" to="/">
-            <div className="logo" />
+      <div className={classes.row}>
+        <div className={classes.col}>
+          <Link className={classes.gallery__home__link} to="/">
+            <div className={classes.logo} />
           </Link>
           <GalleryBody gallery={gallery} />
           <GalleryComments comments={comments} />

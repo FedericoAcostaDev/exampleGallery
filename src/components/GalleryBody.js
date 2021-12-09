@@ -1,52 +1,57 @@
 import React from "react";
 import { GalleryInfo } from "./GalleryInfo.js";
 
-export const GalleryBody = props => {
+import classes from "../css/gallery.scss";
+export const GalleryBody = (props) => {
   const { gallery } = props;
 
   return (
-    <div className="gallery-body">
-      <h1 className="gallery-body__title">{gallery.title}</h1>
-      <p className="gallery-body__name">by {gallery.account_url}</p>
+    <div className={classes.gallery__body}>
+      <h1 className={classes.gallery__body__title}>{gallery.title}</h1>
+      <p className={classes.gallery__body__name}>by {gallery.account_url}</p>
       {gallery.images ? (
-        gallery.images.map(image => {
+        gallery.images.map((image) => {
           return (
-            <div key={image.id} className="gallery-body__image-container">
-              <div className="gallery-body__image-wrapper">
-                {(gallery.images &&
-                  gallery.images[0].animated && (
-                    <video
-                      preload="auto"
-                      autoPlay="autoplay"
-                      loop="loop"
-                      className="gallery-body__image"
-                    >
-                      <source src={gallery.images[0].mp4} type="video/mp4" />
-                    </video>
-                  )) ||
+            <div
+              key={image.id}
+              className={classes.gallery__body__image__container}
+            >
+              <div className={classes.gallery__body__image__wrapper}>
+                {(gallery.images && gallery.images[0].animated && (
+                  <video
+                    preload="auto"
+                    autoPlay="autoplay"
+                    loop="loop"
+                    className={classes.gallery__body__image}
+                  >
+                    <source src={gallery.images[0].mp4} type="video/mp4" />
+                  </video>
+                )) ||
                   (gallery.image && (
                     <img src={gallery.image.link} alt={image.title} />
                   )) || (
                     <img
                       src={image.link}
                       alt={image.title}
-                      className="gallery-body__image"
+                      className={classes.gallery__body__image}
                     />
                   )}
               </div>
-              <p className="gallery-body__image-description">
+              <p className={classes.gallery__body__image__description}>
                 {image.description}
               </p>
             </div>
           );
         })
       ) : (
-        <div className="gallery-body__image-wrapper">
-          <img className="gallery-body__image" src={gallery.link} />
+        <div className={classes.gallery__body__image__wrapper}>
+          <img className={classes.gallery__body__image} src={gallery.link} />
         </div>
       )}
       {gallery.description && (
-        <p className="gallery-body__description">{gallery.description}</p>
+        <p className={classes.gallery__body__description}>
+          {gallery.description}
+        </p>
       )}
       <GalleryInfo gallery={gallery} />
     </div>
