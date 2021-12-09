@@ -9,7 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlineRight } from "react-icons/ai";
 
-import "../css/nav.css";
+import classes from "../css/nav.scss";
 
 const drawerWidth = 400;
 
@@ -41,10 +41,10 @@ export const Nav = (props) => {
   };
 
   return (
-    <div className="filter__wrapper">
-      <div type="button" onClick={scrollToTop} className="logo" />
-      <div className="row">
-        <div className="filter">
+    <div className={classes.filter__wrapper}>
+      <div type="button" onClick={scrollToTop} className={classes.logo} />
+      <div className={classes.row}>
+        <div className={classes.filter}>
           <IconButton
             className="iconnButton"
             color="inherit"
@@ -53,10 +53,10 @@ export const Nav = (props) => {
             onClick={handleDrawerOpen}
             sx={{ ...(open && { display: "none" }) }}
           >
-            <FiFilter className="fiFilter" />
+            <FiFilter className={classes.fiFilter} />
           </IconButton>
           <Drawer
-            className="drawer"
+            className={classes.drawer}
             sx={{
               width: drawerWidth,
               flexShrink: 0,
@@ -70,13 +70,13 @@ export const Nav = (props) => {
           >
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
-                <AiOutlineRight className="rightArrowIcon" />
+                <AiOutlineRight className={classes.rightArrowIcon} />
               </IconButton>
-              <h4 className="filters">Filter by</h4>
+              <h4 className={classes.filter}>Filter by</h4>
             </DrawerHeader>
             <Divider />
             <List>
-              <div className="item">
+              <div className={classes.item}>
                 <label className="label" htmlFor="sort">
                   Show Viral
                 </label>
@@ -89,14 +89,14 @@ export const Nav = (props) => {
                   <option value="true">On</option>
                   <option value="false">Off</option>
                 </select>
-                <span className="arrow"></span>
+                <span className={classes.arrow}></span>
               </div>
-              <div className="item">
-                <label className="label" htmlFor="section">
+              <div className={classes.item}>
+                <label className={classes.label} htmlFor="section">
                   Section
                 </label>
                 <select
-                  className="section"
+                  className={classes.section}
                   id="section"
                   name="section"
                   onChange={(e) => onFilterChange(e)}
@@ -109,8 +109,8 @@ export const Nav = (props) => {
                   </option>
                 </select>
               </div>
-              <div className="item">
-                <label className="label" htmlFor="sort">
+              <div className={classes.item}>
+                <label className={classes.label} htmlFor="sort">
                   Sort by
                 </label>
                 <select
@@ -125,8 +125,8 @@ export const Nav = (props) => {
                   {userSelected && <option value="rising">Rising</option>}
                 </select>
               </div>
-              <div className="item">
-                <label className="label" htmlFor="section">
+              <div className={classes.item}>
+                <label className={classes.label} htmlFor="section">
                   Window
                 </label>
                 <select
